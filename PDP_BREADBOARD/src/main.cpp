@@ -13,10 +13,6 @@ void setup()
   Serial.println("--------------------");
   Serial.println();
   dht.begin(); // Initialisation DHT22
-}
-
-void loop() 
-{
 
   float humidity = dht.readHumidity();  
   float temp = dht.readTemperature();   
@@ -28,6 +24,11 @@ void loop()
   Serial.print("Température = ");
   Serial.print(temp);
   Serial.println(" °C");
-  
-  delay(5000);
+
+
+  ESP.deepSleep(5e6);
+}
+
+void loop(){
+
 }
